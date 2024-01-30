@@ -5,7 +5,7 @@ import { useAuth0 } from "@auth0/auth0-react"; // react library  for Auth0 authe
 
 const Upload = () => {
   const [isActive, setIsActive] = useState(false); //  to handle the drag and drop functionality
-  const { user } = useAuth0(); // to fetch the user data
+  const { user, logout } = useAuth0(); // to fetch the user data
 
   const toggleClass = () => {
     setIsActive(!isActive);
@@ -157,7 +157,7 @@ const Upload = () => {
               </svg>
               Notification
             </div>
-            <div className={styles.menuitems} onClick={toggleClass}>
+            <div className={styles.menuitems} onClick={logout}>
               <svg
                 width="24"
                 height="27"
